@@ -1,0 +1,102 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { PUBLIC_BOOKING_API_URL } from "astro:env/client";
+
+const posts = (await getCollection("blog"))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 2);
+const bookingUrl = PUBLIC_BOOKING_API_URL;
+---
+
+<Base
+	title="Kilnbook"
+	description="Kilnbook is booking and class-management software for pottery studios: kiln firing queues, wheel time reservations, class packs and memberships in one place."
+>
+	<section class="wrap hero">
+		<div>
+			<h1>The front desk for your pottery studio.</h1>
+			<p class="lede">
+				Kilnbook runs the parts of a studio that live on whiteboards and sticky notes: who is firing
+				what, which wheels are free on Thursday, and how many classes are left on a student's pack.
+			</p>
+			<div class="hero-actions">
+				<a href="/contact" class="btn">Book a demo</a>
+				<a href="/pricing" class="btn btn-ghost">See pricing</a>
+			</div>
+			<p class="muted small">30-day free trial. No card needed to start.</p>
+		</div>
+		<img
+			src="/images/hero-kiln.svg"
+			alt="A kiln next to a firing schedule showing bisque and glaze loads for the week"
+			width="520"
+			height="420"
+		/>
+	</section>
+
+	<section class="section section-alt">
+		<div class="wrap">
+			<h2>Three things every studio juggles</h2>
+			<div class="cards">
+				<div class="card">
+					<h3>Kiln firings</h3>
+					<p>
+						Members drop work on a shelf, Kilnbook adds it to the right load, charges the firing
+						fee by cubic inch and texts them when pieces are ready for pickup.
+					</p>
+					<a href="/features/firings">How firing queues work</a>
+				</div>
+				<div class="card">
+					<h3>Classes &amp; packs</h3>
+					<p>
+						Sell six-week courses, drop-in sessions and class packs. Waitlists fill seats on their
+						own when someone cancels.
+					</p>
+					<a href="/features/classes">Classes and packs</a>
+				</div>
+				<div class="card">
+					<h3>Wheel time</h3>
+					<p>
+						Members reserve wheels and hand-building tables in one-hour blocks, with limits you set
+						per membership tier.
+					</p>
+					<a href="/features/wheel-time">Wheel and table booking</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="wrap section split">
+		<blockquote class="quote">
+			We used to spend Sunday nights reconciling the kiln log with Venmo. Now the log is the
+			invoice.
+			<cite>Dana Whitlock, owner, Mudroom Ceramics (Tacoma, WA)</cite>
+		</blockquote>
+		<div>
+			<h2>Built with studio owners, not just for them</h2>
+			<p>
+				Kilnbook started in a 14-wheel community studio in Portland. Over 340 studios in the US,
+				Canada and the UK now run their bookings, firings and memberships on it.
+			</p>
+			<p><a href={`${bookingUrl}/studios`}>Find a Kilnbook studio near you</a></p>
+		</div>
+	</section>
+
+	<section class="section section-alt">
+		<div class="wrap">
+			<h2>From the journal</h2>
+			<ul class="post-list">
+				{
+					posts.map((post) => (
+						<li>
+							<h3>
+								<a href={`/blog/${post.id}`}>{post.data.title}</a>
+							</h3>
+							<p class="muted">{post.data.description}</p>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</section>
+</Base>

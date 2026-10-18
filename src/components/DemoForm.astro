@@ -1,0 +1,39 @@
+---
+import { PUBLIC_BOOKING_API_URL } from "astro:env/client";
+
+interface Props {
+	source: string;
+}
+const { source } = Astro.props;
+const action = `${PUBLIC_BOOKING_API_URL}/demo-requests`;
+---
+
+<form class="demo-form" method="post" action={action}>
+	<input type="hidden" name="source" value={source} />
+	<label>
+		Your name
+		<input type="text" name="name" autocomplete="name" required />
+	</label>
+	<label>
+		Email
+		<input type="email" name="email" autocomplete="email" required />
+	</label>
+	<label>
+		Studio name
+		<input type="text" name="studio" required />
+	</label>
+	<label>
+		How many kilns do you run?
+		<select name="kilns">
+			<option>1</option>
+			<option>2–3</option>
+			<option>4–6</option>
+			<option>7 or more</option>
+		</select>
+	</label>
+	<label class="full">
+		Anything we should know?
+		<textarea name="notes" rows="4" placeholder="e.g. we run a waitlist for Tuesday wheel classes and a shared bisque schedule"></textarea>
+	</label>
+	<button type="submit" class="btn">Book a 20-minute demo</button>
+</form>

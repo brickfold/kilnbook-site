@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320">
+  <rect width="480" height="320" rx="14" fill="#ead9c4"/>
+  <g transform="translate(60 50) rotate(-6)">
+    <rect width="240" height="150" rx="12" fill="#fff" stroke="#d8c3a8"/>
+    <text x="20" y="38" font-family="Georgia, serif" font-size="20" fill="#2a211c">Wheel 101 · 6-pack</text>
+    <g fill="#b5532f"><circle cx="36" cy="88" r="14"/><circle cx="76" cy="88" r="14"/><circle cx="116" cy="88" r="14"/></g>
+    <g fill="none" stroke="#b5532f" stroke-width="2.5"><circle cx="156" cy="88" r="14"/><circle cx="196" cy="88" r="14"/><circle cx="36" cy="126" r="14"/></g>
+  </g>
+  <g transform="translate(220 140) rotate(5)">
+    <rect width="200" height="120" rx="12" fill="#3f6f6a"/>
+    <text x="18" y="40" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#fff">Waitlist</text>
+    <text x="18" y="68" font-family="system-ui, sans-serif" font-size="13" fill="#dbe8e5">Tue 6:30pm · 4 waiting</text>
+    <text x="18" y="92" font-family="system-ui, sans-serif" font-size="13" fill="#dbe8e5">Auto-offer seats: on</text>
+  </g>
+</svg>

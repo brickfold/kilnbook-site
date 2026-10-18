@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320">
+  <rect width="480" height="320" rx="14" fill="#fff" stroke="#ead9c4" stroke-width="2"/>
+  <text x="24" y="40" font-family="Georgia, serif" font-size="18" font-weight="600" fill="#2a211c">Shelf queue · Skutt 1027</text>
+  <g font-family="system-ui, sans-serif" font-size="13" fill="#2a211c">
+    <rect x="24" y="62" width="432" height="44" rx="8" fill="#f6efe6"/>
+    <rect x="24" y="62" width="300" height="44" rx="8" fill="#ead9c4"/>
+    <text x="38" y="89">Bisque · 70% full · fires Thu 7pm</text>
+    <rect x="24" y="118" width="432" height="44" rx="8" fill="#f6efe6"/>
+    <rect x="24" y="118" width="410" height="44" rx="8" fill="#f2c9a8"/>
+    <text x="38" y="145">Glaze cone 6 · 95% full · ready to load</text>
+    <rect x="24" y="174" width="432" height="44" rx="8" fill="#f6efe6"/>
+    <rect x="24" y="174" width="120" height="44" rx="8" fill="#dbe8e5"/>
+    <text x="38" y="201">Glaze cone 10 · 28% full</text>
+  </g>
+  <g transform="translate(24 240)" font-family="system-ui, sans-serif" font-size="12" fill="#6d5d52">
+    <circle cx="8" cy="20" r="8" fill="#b5532f"/><text x="24" y="24">14 pieces waiting on pickup texts</text>
+    <circle cx="248" cy="20" r="8" fill="#3f6f6a"/><text x="264" y="24">Fee: $0.04 per cu in</text>
+  </g>
+</svg>

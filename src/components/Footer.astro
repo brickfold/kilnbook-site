@@ -1,0 +1,37 @@
+---
+import { PUBLIC_BOOKING_API_URL } from "astro:env/client";
+
+const bookingUrl = PUBLIC_BOOKING_API_URL;
+---
+
+<footer class="site-footer">
+	<div class="wrap footer-grid">
+		<div>
+			<img src="/images/logo.svg" alt="Kilnbook" width="110" height="27" />
+			<p class="muted">Bookings, firings and class packs for pottery studios.</p>
+			<p class="muted small">Made in Portland, Oregon.</p>
+		</div>
+		<div>
+			<h2 class="footer-head">Product</h2>
+			<ul>
+				<li><a href="/features/firings">Kiln firings</a></li>
+				<li><a href="/features/classes">Classes &amp; packs</a></li>
+				<li><a href="/features/wheel-time">Wheel time</a></li>
+				<li><a href="/pricing">Pricing</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="footer-head">Company</h2>
+			<ul>
+				<li><a href="/about">About</a></li>
+				<li><a href="/blog">Journal</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href={`${bookingUrl}/studios`}>Find a studio</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap footer-base">
+		<span>&copy; 2023 Kilnbook, Inc.</span>
+		<span class="credit">Site by <a href="https://brickfold.studio" rel="noopener">Brickfold</a></span>
+	</div>
+</footer>

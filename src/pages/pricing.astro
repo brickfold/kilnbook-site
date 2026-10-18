@@ -1,0 +1,88 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+	title="Pricing"
+	description="Simple monthly pricing for pottery studios of every size. Starter, Studio and Collective plans, all with a 30-day free trial."
+>
+	<section class="wrap section">
+		<h1>Pricing that grows with your studio</h1>
+		<p class="muted">
+			Every plan includes unlimited classes, online payments and text reminders. Prices in USD,
+			billed monthly. Save two months when you pay yearly.
+		</p>
+
+		<div class="plans">
+			<div class="plan">
+				<h2>Starter</h2>
+				<p class="price">$29<span>/month</span></p>
+				<p class="muted">For a home studio or a shared garage setup.</p>
+				<ul>
+					<li>1 kiln</li>
+					<li>Up to 150 members</li>
+					<li>Class and drop-in booking</li>
+					<li>Firing fees by cubic inch</li>
+				</ul>
+			</div>
+			<div class="plan featured">
+				<h2>Studio</h2>
+				<p class="price">$79<span>/month</span></p>
+				<p class="muted">Our most popular plan for community studios.</p>
+				<ul>
+					<li>Up to 3 kilns</li>
+					<li>Unlimited members</li>
+					<li>Wheel and table reservations</li>
+					<li>Class packs, waitlists and memberships</li>
+					<li>Pickup texts when pieces come out of the kiln</li>
+				</ul>
+			</div>
+			<div class="plan">
+				<h2>Collective</h2>
+				<p class="price">$149<span>/month</span></p>
+				<p class="muted">For studios with more than one location.</p>
+				<ul>
+					<li>Unlimited kilns</li>
+					<li>Multiple locations, one member account</li>
+					<li>Staff roles and shift notes</li>
+					<li>Priority support from a real potter</li>
+				</ul>
+			</div>
+		</div>
+
+		<p class="muted small">
+			Card payments are processed by Stripe at their standard rate. Kilnbook does not add a booking
+			fee on top.
+		</p>
+	</section>
+
+	<section class="wrap section narrow">
+		<h2>Questions studios ask</h2>
+		<dl class="faq">
+			<dt>How does the free trial work?</dt>
+			<dd>
+				You get 30 days on the Studio plan with no card. At the end you pick a plan or your account
+				pauses. Nothing is deleted.
+			</dd>
+			<dt>Can I import my members from a spreadsheet?</dt>
+			<dd>
+				Yes. Upload a CSV with names, emails and remaining class credits, and we map the columns for
+				you during setup.
+			</dd>
+			<dt>What happens if I add a fourth kiln?</dt>
+			<dd>
+				You can move from Studio to Collective at any point in the month. We prorate the difference
+				on your next invoice.
+			</dd>
+			<dt>Do you offer nonprofit pricing?</dt>
+			<dd>
+				Registered nonprofits and school ceramics programs get 30% off any plan. Mention it when you
+				book a demo.
+			</dd>
+		</dl>
+		<p>
+			Still deciding? Read the <a href="/help/billing">billing FAQ</a> or
+			<a href="/contact">talk to us</a>.
+		</p>
+	</section>
+</Base>

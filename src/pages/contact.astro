@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import DemoForm from "../components/DemoForm.astro";
+---
+
+<Base
+	title="About Kilnbook"
+	description="Book a 20-minute Kilnbook demo or reach our support team. We reply within one business day."
+>
+	<section class="wrap section">
+		<h1>Book a demo</h1>
+		<p class="muted narrow">
+			Twenty minutes on a call with someone who has run a studio. Bring your kiln schedule and your
+			current class list, and we will show you what they look like in Kilnbook.
+		</p>
+		<DemoForm source="contact-page" />
+	</section>
+
+	<section class="wrap section narrow">
+		<h2>Already a customer?</h2>
+		<p>
+			Email <a href="mailto:help@kilnbook.co">help@kilnbook.co</a>. We answer Monday to Friday, 8am
+			to 6pm Pacific, usually within a few hours and always within one business day.
+		</p>
+		<h2>Press and partnerships</h2>
+		<p>
+			Write to <a href="mailto:hello@kilnbook.co">hello@kilnbook.co</a>. We are glad to talk with
+			clay suppliers, kiln manufacturers and ceramics guilds.
+		</p>
+		<p class="muted small">
+			Kilnbook, Inc. · 2034 SE Division St, Suite 3 · Portland, OR 97202
+		</p>
+	</section>
+</Base>
