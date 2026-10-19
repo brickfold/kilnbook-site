@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300">
-  <rect width="480" height="300" rx="14" fill="#fff" stroke="#ead9c4" stroke-width="2"/>
-  <g font-family="system-ui, sans-serif" font-size="12" fill="#6d5d52">
+  <rect width="480" height="300" rx="14" fill="#fff" stroke="#1b1f2a" stroke-width="2"/>
+  <g font-family="system-ui, sans-serif" font-size="12" fill="#39404f">
     <text x="90" y="34">9am</text><text x="170" y="34">11am</text><text x="250" y="34">1pm</text><text x="330" y="34">3pm</text><text x="410" y="34">5pm</text>
     <text x="20" y="76">Wheel 1</text><text x="20" y="126">Wheel 2</text><text x="20" y="176">Wheel 3</text><text x="20" y="226">Wheel 4</text>
   </g>
-  <g fill="#f6efe6"><rect x="80" y="56" width="380" height="32" rx="6"/><rect x="80" y="106" width="380" height="32" rx="6"/><rect x="80" y="156" width="380" height="32" rx="6"/><rect x="80" y="206" width="380" height="32" rx="6"/></g>
-  <g fill="#b5532f"><rect x="80" y="56" width="140" height="32" rx="6"/><rect x="240" y="106" width="100" height="32" rx="6"/><rect x="160" y="206" width="180" height="32" rx="6"/></g>
-  <g fill="#3f6f6a"><rect x="300" y="56" width="80" height="32" rx="6"/><rect x="80" y="156" width="220" height="32" rx="6"/></g>
-  <text x="80" y="272" font-family="system-ui, sans-serif" font-size="12" fill="#6d5d52">Members book in 1-hour blocks · 48-hour cancellation window</text>
+  <g fill="#f1f3f7"><rect x="80" y="56" width="380" height="32" rx="6"/><rect x="80" y="106" width="380" height="32" rx="6"/><rect x="80" y="156" width="380" height="32" rx="6"/><rect x="80" y="206" width="380" height="32" rx="6"/></g>
+  <g fill="#f8991c"><rect x="80" y="56" width="140" height="32" rx="6"/><rect x="240" y="106" width="100" height="32" rx="6"/><rect x="160" y="206" width="180" height="32" rx="6"/></g>
+  <g fill="#5b6c8f"><rect x="300" y="56" width="80" height="32" rx="6"/><rect x="80" y="156" width="220" height="32" rx="6"/></g>
+  <text x="80" y="272" font-family="system-ui, sans-serif" font-size="12" fill="#39404f">Members book in 1-hour blocks · 48-hour cancellation window</text>
 </svg>

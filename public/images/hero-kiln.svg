@@ -1,31 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420">
-  <rect width="520" height="420" rx="18" fill="#ead9c4"/>
-  <rect x="40" y="300" width="440" height="14" rx="4" fill="#8a3c1f"/>
+  <rect width="520" height="420" rx="18" fill="#1b1f2a"/>
+  <rect x="40" y="300" width="440" height="14" rx="4" fill="#333845"/>
   <!-- kiln body -->
-  <rect x="70" y="120" width="180" height="180" rx="14" fill="#6d5d52"/>
-  <rect x="84" y="134" width="152" height="152" rx="10" fill="#2a211c"/>
-  <circle cx="160" cy="210" r="48" fill="#b5532f" opacity="0.85"/>
-  <circle cx="160" cy="210" r="30" fill="#f2a15b" opacity="0.8"/>
-  <rect x="70" y="104" width="180" height="20" rx="8" fill="#4d4038"/>
-  <rect x="236" y="190" width="22" height="40" rx="5" fill="#3f6f6a"/>
+  <rect x="70" y="120" width="180" height="180" rx="14" fill="#39404f"/>
+  <rect x="84" y="134" width="152" height="152" rx="10" fill="#14161d"/>
+  <circle cx="160" cy="210" r="48" fill="#f8991c" opacity="0.85"/>
+  <circle cx="160" cy="210" r="30" fill="#ffc46a" opacity="0.8"/>
+  <rect x="70" y="104" width="180" height="20" rx="8" fill="#262b36"/>
+  <rect x="236" y="190" width="22" height="40" rx="5" fill="#5b6c8f"/>
   <!-- calendar card -->
   <g transform="translate(286 92)">
-    <rect width="196" height="196" rx="12" fill="#fff" stroke="#d8c3a8"/>
-    <rect width="196" height="38" rx="12" fill="#b5532f"/>
-    <rect y="26" width="196" height="12" fill="#b5532f"/>
+    <rect width="196" height="196" rx="12" fill="#fff" stroke="#7e89a0"/>
+    <rect width="196" height="38" rx="12" fill="#f8991c"/>
+    <rect y="26" width="196" height="12" fill="#f8991c"/>
     <text x="16" y="25" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#fff">Firings · week 42</text>
-    <g font-family="system-ui, sans-serif" font-size="11" fill="#2a211c">
-      <rect x="14" y="52" width="168" height="30" rx="6" fill="#f6efe6"/>
+    <g font-family="system-ui, sans-serif" font-size="11" fill="#14161d">
+      <rect x="14" y="52" width="168" height="30" rx="6" fill="#f1f3f7"/>
       <text x="24" y="71">Mon · Bisque · cone 04</text>
-      <rect x="14" y="90" width="168" height="30" rx="6" fill="#f6efe6"/>
+      <rect x="14" y="90" width="168" height="30" rx="6" fill="#f1f3f7"/>
       <text x="24" y="109">Wed · Glaze · cone 6</text>
-      <rect x="14" y="128" width="168" height="30" rx="6" fill="#dbe8e5"/>
+      <rect x="14" y="128" width="168" height="30" rx="6" fill="#ffeccc"/>
       <text x="24" y="147">Fri · Glaze · cone 10</text>
-      <rect x="14" y="166" width="80" height="12" rx="6" fill="#ead9c4"/>
+      <rect x="14" y="166" width="80" height="12" rx="6" fill="#1b1f2a"/>
     </g>
   </g>
   <!-- pots -->
-  <path d="M310 300c-6-30 8-46 24-46s30 16 24 46z" fill="#3f6f6a"/>
-  <path d="M376 300c-10-22-4-40 18-40s28 18 18 40z" fill="#b5532f"/>
-  <path d="M432 300c-4-18 2-30 14-30s18 12 14 30z" fill="#d8c3a8"/>
+  <path d="M310 300c-6-30 8-46 24-46s30 16 24 46z" fill="#5b6c8f"/>
+  <path d="M376 300c-10-22-4-40 18-40s28 18 18 40z" fill="#f8991c"/>
+  <path d="M432 300c-4-18 2-30 14-30s18 12 14 30z" fill="#7e89a0"/>
 </svg>

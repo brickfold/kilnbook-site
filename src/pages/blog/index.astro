@@ -12,9 +12,15 @@ const fmt = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
 	title="Journal"
 	description="Notes on running a pottery studio: firing schedules, pricing classes, membership rules and what we are building at Kilnbook."
 >
+	<section class="band-dark page-hero">
+		<div class="wrap">
+			<p class="eyebrow">The journal</p>
+			<h1>Notes on running a studio</h1>
+			<p class="lede narrow">From the people who build Kilnbook.</p>
+		</div>
+	</section>
+
 	<section class="wrap section narrow">
-		<h1>Journal</h1>
-		<p class="muted">Notes on running a studio, from the people who build Kilnbook.</p>
 		<ul class="post-list">
 			{
 				posts.map((post) => (
