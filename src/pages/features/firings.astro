@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import FiringCostCalculator from "../../components/FiringCostCalculator.astro";
 ---
 
 <Base
@@ -55,5 +56,13 @@ import Base from "../../layouts/Base.astro";
 			limit. Electric, gas and raku kilns all work the same way.
 			<a href="/pricing">Compare plans</a>.
 		</p>
+
+		<h2 id="firing-cost">What does a firing really cost you?</h2>
+		<p>
+			Before you set a rate per cubic inch, add up what one load takes: fuel, the hours spent loading
+			and unloading, and the kiln wash and stilts you go through. Put in your own numbers and see the
+			cost per piece.
+		</p>
+		<FiringCostCalculator />
 	</section>
 </Base>

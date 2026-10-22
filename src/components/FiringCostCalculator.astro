@@ -1,0 +1,126 @@
+<form class="demo-form cost-calc" data-cost-calc>
+	<label>
+		Electricity or gas per firing ($)
+		<input type="number" name="fuel" min="0" step="0.01" inputmode="decimal" value="18" />
+	</label>
+	<label>
+		Consumables per firing ($)
+		<input type="number" name="consumables" min="0" step="0.01" inputmode="decimal" value="6" />
+		<span class="calc-help">Kiln wash, stilts, cones, shelf posts</span>
+	</label>
+	<label>
+		Labor time per firing (hours)
+		<input type="number" name="hours" min="0" step="0.25" inputmode="decimal" value="2" />
+	</label>
+	<label>
+		Hourly labor rate ($)
+		<input type="number" name="rate" min="0" step="0.01" inputmode="decimal" value="20" />
+	</label>
+	<label>
+		Kiln capacity
+		<span class="calc-pair">
+			<input type="number" name="capacity" min="0" step="1" inputmode="numeric" value="7000" />
+			<select name="unit" aria-label="Capacity unit">
+				<option value="in">cubic inches</option>
+				<option value="shelf">shelves</option>
+			</select>
+		</span>
+	</label>
+	<label>
+		Pieces per firing
+		<input type="number" name="pieces" min="0" step="1" inputmode="numeric" value="40" />
+	</label>
+
+	<div class="calc-results full" aria-live="polite">
+		<div>
+			<span class="calc-label">Total cost per firing</span>
+			<strong data-out="total">$64.00</strong>
+		</div>
+		<div>
+			<span class="calc-label">Cost per piece</span>
+			<strong data-out="piece">$1.60</strong>
+		</div>
+		<div>
+			<span class="calc-label" data-out="unit-label">Cost per cubic inch</span>
+			<strong data-out="unit">$0.0091</strong>
+		</div>
+	</div>
+</form>
+
+<style>
+	.cost-calc {
+		box-shadow: none;
+	}
+	.calc-help {
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--muted);
+	}
+	.calc-pair {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 8px;
+	}
+	.calc-results {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 18px;
+		border-top: 1px solid var(--line);
+		padding-top: 22px;
+		margin-top: 4px;
+	}
+	.calc-label {
+		display: block;
+		text-transform: uppercase;
+		font-size: 0.74rem;
+		letter-spacing: 0.14em;
+		font-weight: 700;
+		color: var(--muted);
+	}
+	.calc-results strong {
+		display: block;
+		font-size: 2.2rem;
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		line-height: 1.1;
+		margin-top: 6px;
+	}
+	.calc-results strong[data-out="unit"] {
+		font-size: 1.4rem;
+		margin-top: 12px;
+	}
+	@media (max-width: 760px) {
+		.calc-results {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
+
+<script>
+	const money = (n: number, digits = 2) =>
+		"$" + n.toLocaleString("en-US", { minimumFractionDigits: digits, maximumFractionDigits: digits });
+
+	for (const form of document.querySelectorAll<HTMLFormElement>("[data-cost-calc]")) {
+		const num = (name: string) => {
+			const v = parseFloat((form.elements.namedItem(name) as HTMLInputElement).value);
+			return Number.isFinite(v) && v > 0 ? v : 0;
+		};
+		const out = (name: string) => form.querySelector<HTMLElement>(`[data-out="${name}"]`)!;
+
+		const update = () => {
+			const total = num("fuel") + num("consumables") + num("hours") * num("rate");
+			const pieces = num("pieces");
+			const capacity = num("capacity");
+			const perShelf = (form.elements.namedItem("unit") as HTMLSelectElement).value === "shelf";
+
+			out("total").textContent = money(total);
+			out("piece").textContent = pieces ? money(total / pieces) : "—";
+			out("unit-label").textContent = perShelf ? "Cost per shelf" : "Cost per cubic inch";
+			out("unit").textContent = capacity ? money(total / capacity, perShelf ? 2 : 4) : "—";
+		};
+
+		form.addEventListener("input", update);
+		form.addEventListener("submit", (e) => e.preventDefault());
+		update();
+	}
+</script>
