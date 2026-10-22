@@ -6,9 +6,10 @@ import "../styles/global.css";
 interface Props {
 	title: string;
 	description?: string;
+	bare?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, bare = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", Astro.site);
 const fullTitle = title === "Kilnbook" ? title : `${title} · Kilnbook`;
 ---
@@ -34,10 +35,10 @@ const fullTitle = title === "Kilnbook" ? title : `${title} · Kilnbook`;
 		<meta name="theme-color" content="#0f1117" />
 	</head>
 	<body>
-		<Header />
+		{!bare && <Header />}
 		<main>
 			<slot />
 		</main>
-		<Footer />
+		{!bare && <Footer />}
 	</body>
 </html>

@@ -1,0 +1,152 @@
+---
+import Base from "../layouts/Base.astro";
+import DemoForm from "../components/DemoForm.astro";
+---
+
+<Base
+	title="Stop running your studio on sticky notes"
+	description="Kilnbook runs a pottery studio's day from the front desk to the kiln: firing queues and fees, pickup texts, class bookings and waitlists that fill themselves."
+	bare
+>
+	<header class="lp-bar">
+		<div class="wrap">
+			<img src="/images/logo.svg" alt="Kilnbook" width="132" height="32" />
+		</div>
+	</header>
+
+	<section class="lp-hero">
+		<div class="wrap narrow">
+			<p class="eyebrow">For pottery studio owners</p>
+			<h1>Your kiln log is a clipboard. Your waitlist is a sticky note.</h1>
+			<p class="lede">
+				Kilnbook runs your studio from the front desk to the kiln: firing queues and fees, pickup
+				texts, class bookings and waitlists. No more weekends matching the paper log to your payment
+				app.
+			</p>
+			<a href="#book-demo" class="btn">Book a demo</a>
+			<p class="muted small">30-day free trial. No card needed to start.</p>
+		</div>
+	</section>
+
+	<section class="section lp-story" aria-labelledby="story-title">
+		<div class="wrap">
+			<p class="eyebrow">A day in the studio</p>
+			<h2 id="story-title">One bowl, one cancelled seat, zero sticky notes.</h2>
+
+			<ol class="lp-steps">
+				<li class="lp-step">
+					<div class="lp-step-text">
+						<p class="lp-step-label">Drop-off</p>
+						<h3>A member leaves work on the bisque shelf</h3>
+						<p>
+							She sets down three mugs and a bowl, then logs them from her phone before she heads
+							out. Pick a size preset or enter height, width and depth. No tag to fill in, no note
+							taped to the shelf.
+						</p>
+					</div>
+					<div class="lp-detail" aria-hidden="true">
+						<p class="lp-detail-head">Logged to bisque shelf</p>
+						<ul class="lp-rows">
+							<li><span>Mug</span><span>× 3</span></li>
+							<li><span>Bowl</span><span>× 1</span></li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="lp-step">
+					<div class="lp-step-text">
+						<p class="lp-step-label">Firing queue</p>
+						<h3>The pieces join the right load</h3>
+						<p>
+							Each kiln keeps its own queue for bisque and glaze firings. You can see how full the
+							next load is, move pieces between loads, and mark a load as fired with one tap.
+						</p>
+					</div>
+					<img
+						class="lp-art"
+						src="/images/firing-queue.svg"
+						alt="A shelf queue for one kiln showing a bisque load at 70 percent and a cone 6 glaze load ready to fire"
+						width="480"
+						height="320"
+						loading="lazy"
+					/>
+				</li>
+
+				<li class="lp-step">
+					<div class="lp-step-text">
+						<p class="lp-step-label">Firing fee</p>
+						<h3>The right fee, charged once</h3>
+						<p>
+							Kilnbook works out the firing fee by cubic inch, a flat fee per piece, or both, and
+							she pays when she logs the work. Nobody counts pots at the end of the month.
+						</p>
+					</div>
+					<div class="lp-detail" aria-hidden="true">
+						<p class="lp-detail-head">Firing fee</p>
+						<ul class="lp-rows">
+							<li><span>Charged by</span><span>Cubic inch</span></li>
+							<li><span>Status</span><span class="lp-paid">Paid</span></li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="lp-step">
+					<div class="lp-step-text">
+						<p class="lp-step-label">Pickup</p>
+						<h3>She gets a text when it's ready</h3>
+						<p>
+							When the load is unloaded, everyone with work in it gets a text with a photo of the
+							shelf. Nobody calls the front desk to ask if their bowl is out yet.
+						</p>
+					</div>
+					<div class="lp-detail lp-text" aria-hidden="true">
+						<p class="lp-detail-head">Text message</p>
+						<p class="lp-bubble">Your pieces are out of the kiln and on the pickup shelf.</p>
+					</div>
+				</li>
+
+				<li class="lp-step">
+					<div class="lp-step-text">
+						<p class="lp-step-label">Waitlist</p>
+						<h3>A cancelled seat fills itself</h3>
+						<p>
+							Someone drops out of Tuesday's wheel class. The next student on the waitlist is
+							offered the seat by text and has two hours to accept before it moves on. You find
+							out when you check the roster.
+						</p>
+					</div>
+					<img
+						class="lp-art"
+						src="/images/class-pack.svg"
+						alt="A six-class pack card with three classes used and a waitlist card for a Tuesday evening session"
+						width="480"
+						height="320"
+						loading="lazy"
+					/>
+				</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="lp-trust" aria-label="Kilnbook at a glance">
+		<ul class="wrap">
+			<li><strong>340+</strong> studios</li>
+			<li><strong>US, Canada</strong> &amp; UK</li>
+			<li><strong>30-day</strong> free trial</li>
+			<li><strong>No</strong> credit card</li>
+		</ul>
+	</section>
+
+	<section class="cta-band lp-cta" id="book-demo">
+		<div class="wrap">
+			<h2>Put the clipboard down.</h2>
+			<p>
+				Twenty minutes with someone who has run a studio. Bring your kiln schedule and class list, and
+				we will show you what they look like in Kilnbook.
+			</p>
+			<div class="lp-form">
+				<DemoForm source="landing-b" />
+			</div>
+		</div>
+	</section>
+</Base>
