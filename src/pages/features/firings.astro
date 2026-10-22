@@ -1,11 +1,21 @@
 ---
 import Base from "../../layouts/Base.astro";
+import { featureSchema } from "../../lib/structured-data";
+
+const title = "Kiln firing queues";
+const description =
+	"Track bisque and glaze loads, charge firing fees by cubic inch, and text members when their pieces are ready for pickup.";
+const image = "/images/og/firings.png";
+const jsonLd = featureSchema({
+	name: title,
+	description,
+	url: new URL(Astro.url.pathname, Astro.site).href,
+	image: new URL(image, Astro.site).href,
+	planPrices: [29, 79, 149],
+});
 ---
 
-<Base
-	title="Kiln firing queues"
-	description="Track bisque and glaze loads, charge firing fees by cubic inch, and text members when their pieces are ready for pickup."
->
+<Base {title} {description} {image} {jsonLd}>
 	<section class="band-dark page-hero">
 		<div class="wrap split">
 			<div>

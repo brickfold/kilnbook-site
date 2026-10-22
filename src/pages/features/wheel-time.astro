@@ -1,8 +1,21 @@
 ---
 import Base from "../../layouts/Base.astro";
+import { featureSchema } from "../../lib/structured-data";
+
+const title = "Wheel and table booking";
+const description =
+	"Members reserve wheels, hand-building tables and the slab roller in one-hour blocks. You decide how many hours each membership tier gets and how far ahead they can book.";
+const image = "/images/og/wheel-time.png";
+const jsonLd = featureSchema({
+	name: title,
+	description,
+	url: new URL(Astro.url.pathname, Astro.site).href,
+	image: new URL(image, Astro.site).href,
+	planPrices: [79, 149],
+});
 ---
 
-<Base title="Wheel and table booking">
+<Base {title} {description} {image} {jsonLd}>
 	<section class="band-dark page-hero">
 		<div class="wrap split">
 			<div>
