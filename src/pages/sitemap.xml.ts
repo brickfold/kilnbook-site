@@ -1,22 +1,19 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
-
-const staticPaths = [
-	"/",
-	"/pricing",
-	"/about",
-	"/contact",
-	"/features/firings",
-	"/features/classes",
-	"/features/wheel-time",
-	"/blog",
-];
+import { sitePages, pageUrl, lastCommitDate } from "../site-pages";
 
 export const GET: APIRoute = async ({ site }) => {
 	const posts = await getCollection("blog");
-	const paths = [...staticPaths, ...posts.map((p) => `/blog/${p.id}`)];
-	const urls = paths
-		.map((path) => `  <url><loc>${new URL(path, site).href}</loc></url>`)
+	const entries = [
+		...sitePages.map((p) => ({ path: p.path, file: p.file })),
+		...posts.map((p) => ({ path: `/blog/${p.id}`, file: p.filePath })),
+	];
+	const urls = entries
+		.map(({ path, file }) => {
+			const lastmod = file ? lastCommitDate(file) : undefined;
+			const lastmodTag = lastmod ? `<lastmod>${lastmod}</lastmod>` : "";
+			return `  <url><loc>${pageUrl(path, site)}</loc>${lastmodTag}</url>`;
+		})
 		.join("\n");
 
 	const body = `<?xml version="1.0" encoding="UTF-8"?>
