@@ -10,6 +10,7 @@ const staticPaths = [
 	"/features/classes",
 	"/features/wheel-time",
 	"/blog",
+	"/landing-a",
 ];
 
 export const GET: APIRoute = async ({ site }) => {

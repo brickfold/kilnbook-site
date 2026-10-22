@@ -1,0 +1,80 @@
+---
+import Base from "../layouts/Base.astro";
+
+const trialUrl = "/contact";
+---
+
+<Base
+	title="Software built for pottery studios"
+	description="Kilnbook runs the kiln firing queue, classes and memberships, and wheel reservations for pottery studios. Built by studio owners. Try it free for 30 days."
+	bare
+>
+	<header class="landing-bar">
+		<div class="wrap">
+			<img src="/images/logo.svg" alt="Kilnbook" width="132" height="32" />
+		</div>
+	</header>
+
+	<section class="landing-hero">
+		<div class="wrap narrow">
+			<p class="eyebrow">Made for pottery studios, not gyms</p>
+			<h1>Studio software built by people who <span class="landing-hl">load kilns.</span></h1>
+			<p class="lede">
+				Kilnbook runs the three things generic booking tools get wrong: the kiln queue, your classes
+				and memberships, and who gets which wheel on Thursday night.
+			</p>
+			<div class="hero-actions">
+				<a href={trialUrl} class="btn">Start your free trial</a>
+			</div>
+			<p class="muted small">30 days free. No card needed to start.</p>
+		</div>
+	</section>
+
+	<section class="section section-alt">
+		<div class="wrap">
+			<p class="eyebrow">What it runs</p>
+			<h2>One system for the whole studio</h2>
+			<div class="cards landing-cards">
+				<div class="card">
+					<h3>Kiln firing queue</h3>
+					<p>
+						Members log a piece when it goes on the bisque shelf. Kilnbook charges the firing fee by
+						cubic inch, puts it in the right load and texts them when it is ready for pickup.
+					</p>
+				</div>
+				<div class="card">
+					<h3>Classes, memberships &amp; waitlists</h3>
+					<p>
+						Sell six-week courses, drop-ins and class packs alongside your memberships. When someone
+						cancels, the next student on the waitlist gets the seat.
+					</p>
+				</div>
+				<div class="card">
+					<h3>Wheel &amp; table reservations</h3>
+					<p>
+						Members book wheels and hand-building tables by the hour, with the limits you set for
+						each membership tier.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section landing-proof">
+		<div class="wrap">
+			<div class="landing-stats">
+				<div class="stat"><strong>340+</strong><span>Studios on Kilnbook</span></div>
+				<div class="stat"><strong>3</strong><span>Countries: US, Canada &amp; UK</span></div>
+			</div>
+			<p class="muted">Started in a 14-wheel community studio in Portland, Oregon.</p>
+		</div>
+	</section>
+
+	<section class="cta-band">
+		<div class="wrap">
+			<h2>Stop running your studio on sticky notes.</h2>
+			<p>Try Kilnbook free for 30 days. No card to start.</p>
+			<a href={trialUrl} class="btn btn-dark">Start your free trial</a>
+		</div>
+	</section>
+</Base>
