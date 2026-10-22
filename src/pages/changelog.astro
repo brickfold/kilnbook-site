@@ -1,0 +1,69 @@
+---
+import Base from "../layouts/Base.astro";
+
+interface Entry {
+	date: Date;
+	title: string;
+	description: string;
+	links: { href: string; label: string }[];
+}
+
+const entries: Entry[] = [
+	{
+		date: new Date("2026-08-04"),
+		title: "Firing schedule rules for each cone",
+		description:
+			"Each kiln can now have a schedule rule per cone: a fixed firing day, a fill threshold, or both. Members see the next expected firing date on their piece, so fewer people ask at the front desk when their load is going in.",
+		links: [
+			{ href: "/features/firings", label: "How firing queues work" },
+			{ href: "/blog/glaze-firing-schedules", label: "Why we built it" },
+		],
+	},
+];
+
+const sorted = [...entries].sort((a, b) => b.date.valueOf() - a.date.valueOf());
+const fmt = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
+---
+
+<Base
+	title="Changelog"
+	description="What we have shipped in Kilnbook: new features, workflow improvements and fixes for pottery studios."
+>
+	<section class="band-dark page-hero">
+		<div class="wrap">
+			<p class="eyebrow">Changelog</p>
+			<h1>What's new in Kilnbook</h1>
+			<p class="lede narrow">
+				Features and fixes we have shipped for studios, newest first. Most of them started as a
+				question at someone's front desk.
+			</p>
+		</div>
+	</section>
+
+	<section class="wrap section narrow">
+		<ul class="post-list">
+			{
+				sorted.map((entry) => (
+					<li>
+						<p class="muted small">
+							<time datetime={entry.date.toISOString().slice(0, 10)}>{fmt.format(entry.date)}</time>
+						</p>
+						<h2>{entry.title}</h2>
+						<p>{entry.description}</p>
+						<p class="small">
+							{entry.links.map((link, i) => (
+								<>
+									{i > 0 && " · "}
+									<a href={link.href}>{link.label}</a>
+								</>
+							))}
+						</p>
+					</li>
+				))
+			}
+		</ul>
+		<p>
+			Have a studio problem you would like us to solve next? <a href="/contact">Tell us about it</a>.
+		</p>
+	</section>
+</Base>
