@@ -57,6 +57,7 @@ img { max-width: 100%; height: auto; }
 		var(--black);
 	color: #fff;
 }
+.band-dark.band-flat { background: var(--black); }
 .band-dark .muted { color: #9aa1af; }
 .band-dark .lede { color: #c6cbd6; }
 .band-dark .eyebrow { color: var(--orange); }
