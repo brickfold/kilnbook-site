@@ -7,12 +7,44 @@ const posts = (await getCollection("blog"))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 2);
 const bookingUrl = PUBLIC_BOOKING_API_URL;
+const description =
+	"Kilnbook is booking and class-management software for pottery studios: kiln firing queues, wheel time reservations, class packs and memberships in one place.";
+const site = Astro.site!;
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "Organization",
+			"@id": new URL("/#organization", site).href,
+			name: "Kilnbook",
+			legalName: "Kilnbook, Inc.",
+			url: site.href,
+			logo: new URL("/images/logo.svg", site).href,
+			description,
+			email: "hello@kilnbook.co",
+			address: {
+				"@type": "PostalAddress",
+				streetAddress: "2034 SE Division St, Suite 3",
+				addressLocality: "Portland",
+				addressRegion: "OR",
+				postalCode: "97202",
+				addressCountry: "US",
+			},
+		},
+		{
+			"@type": "WebSite",
+			"@id": new URL("/#website", site).href,
+			name: "Kilnbook",
+			url: site.href,
+			description,
+			publisher: { "@id": new URL("/#organization", site).href },
+		},
+	],
+};
 ---
 
-<Base
-	title="Kilnbook"
-	description="Kilnbook is booking and class-management software for pottery studios: kiln firing queues, wheel time reservations, class packs and memberships in one place."
->
+<Base title="Kilnbook" description={description} image="/images/og-home.png">
+	<script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 	<section class="band-dark">
 		<div class="wrap hero">
 			<div>
