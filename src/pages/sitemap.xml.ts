@@ -1,22 +1,15 @@
 import type { APIRoute } from "astro";
-import { getCollection } from "astro:content";
-
-const staticPaths = [
-	"/",
-	"/pricing",
-	"/about",
-	"/contact",
-	"/features/firings",
-	"/features/classes",
-	"/features/wheel-time",
-	"/blog",
-];
+import { getSitePages, lastModified } from "../site-map";
 
 export const GET: APIRoute = async ({ site }) => {
-	const posts = await getCollection("blog");
-	const paths = [...staticPaths, ...posts.map((p) => `/blog/${p.id}`)];
-	const urls = paths
-		.map((path) => `  <url><loc>${new URL(path, site).href}</loc></url>`)
+	const pages = await getSitePages();
+	const urls = pages
+		.map((page) => {
+			const loc = `<loc>${new URL(page.path, site).href}</loc>`;
+			const date = lastModified(page);
+			const lastmod = date ? `<lastmod>${date.toISOString()}</lastmod>` : "";
+			return `  <url>${loc}${lastmod}</url>`;
+		})
 		.join("\n");
 
 	const body = `<?xml version="1.0" encoding="UTF-8"?>
