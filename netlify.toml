@@ -6,6 +6,11 @@
   NODE_VERSION = "22"
   PNPM_VERSION = "9.15.9"
 
+[[redirects]]
+  from = "/help/billing"
+  to = "/pricing#faq"
+  status = 301
+
 [[headers]]
   for = "/images/*"
   [headers.values]
