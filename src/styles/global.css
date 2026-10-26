@@ -170,7 +170,7 @@ img { max-width: 100%; height: auto; }
 .plan { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; }
 .plan h2 { margin: 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 800; }
 .plan .price { font-size: 3.2rem; font-weight: 900; letter-spacing: -0.04em; margin: 10px 0 4px; line-height: 1; }
-.plan .price span { font-size: 1rem; font-weight: 600; letter-spacing: 0; color: var(--muted); }
+.plan .price span { font-size: 1rem; font-weight: 600; letter-spacing: 0; color: var(--ink); }
 .plan ul { list-style: none; padding: 0; margin: 20px 0 0; }
 .plan li { position: relative; padding: 9px 0 9px 28px; border-bottom: 1px solid var(--line); }
 .plan li:last-child { border-bottom: 0; }
@@ -197,12 +197,12 @@ img { max-width: 100%; height: auto; }
 	border-radius: 999px;
 }
 .plan.featured .price { color: var(--orange); }
-.plan.featured .muted { color: #9aa1af; }
+.plan.featured .price span { color: #fff; }
 .plan.featured li { border-color: var(--black-line); }
 .plan.featured li::before { color: var(--orange); }
 
 .faq dt { font-weight: 800; font-size: 1.05rem; margin-top: 26px; }
-.faq dd { margin: 8px 0 0; color: var(--muted); }
+.faq dd { margin: 8px 0 0; color: var(--ink); }
 
 /* ---- Journal ---- */
 .post-list { list-style: none; padding: 0; }
