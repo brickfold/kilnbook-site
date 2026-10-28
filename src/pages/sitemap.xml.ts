@@ -1,16 +1,8 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
+import { staticPages } from "../data/pages";
 
-const staticPaths = [
-	"/",
-	"/pricing",
-	"/about",
-	"/contact",
-	"/features/firings",
-	"/features/classes",
-	"/features/wheel-time",
-	"/blog",
-];
+const staticPaths = staticPages.map((p) => p.path);
 
 export const GET: APIRoute = async ({ site }) => {
 	const posts = await getCollection("blog");
