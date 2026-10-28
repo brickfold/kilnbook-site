@@ -32,6 +32,7 @@ const fullTitle = title === "Kilnbook" ? title : `${title} · Kilnbook`;
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonical} />
 		<meta name="theme-color" content="#0f1117" />
+		<slot name="head" />
 	</head>
 	<body>
 		<Header />
