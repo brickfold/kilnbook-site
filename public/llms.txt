@@ -1,0 +1,23 @@
+# Kilnbook
+
+> Kilnbook is booking and studio-management software for pottery studios: kiln firing queues, classes and class packs, memberships and wheel time reservations in one place.
+
+## Product
+
+- [Home](https://kilnbook.co/): Overview of Kilnbook, the front desk for pottery studios, covering firings, classes and wheel time.
+- [Kiln firings](https://kilnbook.co/features/firings): Tracking bisque and glaze loads, charging firing fees by cubic inch, and texting members when pieces are ready for pickup.
+- [Classes and class packs](https://kilnbook.co/features/classes): Selling multi-week courses, drop-in sessions and class packs, with waitlists that fill cancelled seats automatically.
+- [Wheel time](https://kilnbook.co/features/wheel-time): Reserving wheels, hand-building tables and other equipment in one-hour blocks, with booking rules per membership tier.
+- [Pricing](https://kilnbook.co/pricing): Starter, Studio and Collective monthly plans, all with a 30-day free trial.
+
+## Company
+
+- [About](https://kilnbook.co/about): How Kilnbook was started in 2022 by a studio owner and a software engineer in Portland, Oregon, what the team believes, and who works here.
+- [Contact](https://kilnbook.co/contact): Book a 20-minute demo, reach customer support, or get in touch about press and partnerships.
+
+## Journal
+
+- [Journal](https://kilnbook.co/blog): Notes on running a pottery studio: firing schedules, pricing classes, membership rules and what Kilnbook is building.
+- [Sharing one glaze kiln between cone 6 and cone 10 potters](https://kilnbook.co/blog/glaze-firing-schedules): How three studios schedule a single gas kiln for two temperature ranges.
+- [Three membership tiers that work for most studios](https://kilnbook.co/blog/membership-tiers): A simple Basic, Regular and Unlimited membership structure and how to set wheel-time limits.
+- [How to price a class pack without losing money on clay](https://kilnbook.co/blog/pricing-a-class-pack): A worked example for pricing 5- and 10-class packs, including clay, firing and instructor time.
