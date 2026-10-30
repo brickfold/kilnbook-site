@@ -63,6 +63,14 @@ img { max-width: 100%; height: auto; }
 .band-dark a:not(.btn) { color: var(--orange); }
 .hl { color: var(--orange); }
 
+/* ---- Light bands (home hero, quote) ---- */
+.band-light { background: var(--paper); color: var(--ink); }
+.band-light .lede { color: var(--muted); }
+.band-light .hl, .band-light .stat strong { color: var(--orange-deep); }
+.band-light .stats { border-top-color: var(--line); }
+.band-light .stat span, .band-light .quote cite { color: var(--muted); }
+.band-light .hero img, .band-light.quote-band img { filter: drop-shadow(0 16px 32px rgba(15, 17, 23, 0.12)); }
+
 /* ---- Header ---- */
 .site-header {
 	position: sticky;
