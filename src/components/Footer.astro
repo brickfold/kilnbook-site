@@ -2,6 +2,7 @@
 import { PUBLIC_BOOKING_API_URL } from "astro:env/client";
 
 const bookingUrl = PUBLIC_BOOKING_API_URL;
+const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
@@ -31,7 +32,11 @@ const bookingUrl = PUBLIC_BOOKING_API_URL;
 		</div>
 	</div>
 	<div class="wrap footer-base">
-		<span>&copy; 2023 Kilnbook, Inc.</span>
+		<span>&copy; <span id="footer-year">{year}</span> Kilnbook, Inc.</span>
 		<span class="credit">Site by <a href="https://brickfold.studio" rel="noopener">Brickfold</a></span>
 	</div>
 </footer>
+
+<script is:inline>
+	document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
