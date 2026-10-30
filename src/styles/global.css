@@ -211,10 +211,17 @@ img { max-width: 100%; height: auto; }
 .post-list a { text-decoration: none; color: var(--ink); }
 .post-list a:hover { color: var(--orange-deep); }
 
+.post-hero { background: var(--black); }
+
 .prose { max-width: 700px; }
 .prose table { border-collapse: collapse; width: 100%; margin: 1em 0; }
 .prose th, .prose td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; }
 .prose th { background: var(--paper-alt); }
+
+.author-bio { margin-top: 56px; padding-top: 28px; border-top: 3px solid var(--orange); }
+.author-bio h3 { margin: 0; }
+.author-bio .muted { margin: 4px 0 12px; }
+.author-bio p:last-child { margin-bottom: 0; }
 
 /* ---- Forms ---- */
 .demo-form {
