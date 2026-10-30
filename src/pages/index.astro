@@ -1,12 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
-import { PUBLIC_BOOKING_API_URL } from "astro:env/client";
 
 const posts = (await getCollection("blog"))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 2);
-const bookingUrl = PUBLIC_BOOKING_API_URL;
 ---
 
 <Base
@@ -89,7 +87,6 @@ const bookingUrl = PUBLIC_BOOKING_API_URL;
 					Kilnbook started in a 14-wheel community studio in Portland. Over 340 studios in the US,
 					Canada and the UK now run their bookings, firings and memberships on it.
 				</p>
-				<p><a href={`${bookingUrl}/studios`}>Find a Kilnbook studio near you</a></p>
 			</div>
 		</div>
 	</section>
