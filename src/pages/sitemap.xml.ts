@@ -9,6 +9,9 @@ const staticPaths = [
 	"/features/firings",
 	"/features/classes",
 	"/features/wheel-time",
+	"/solutions/community-studios",
+	"/solutions/multi-location-studios",
+	"/solutions/schools-and-nonprofits",
 	"/blog",
 ];
 
