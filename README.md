@@ -16,7 +16,7 @@ The build needs one variable:
 
 | Variable                 | What it is                                                                                     | Example                     |
 | ------------------------ | ---------------------------------------------------------------------------------------------- | --------------------------- |
-| `PUBLIC_BOOKING_API_URL` | Base URL of the booking service. Used for the "Book a demo" form action (`/demo-requests`) and the "Find a studio" link (`/studios`). | `https://book.kilnbook.co` |
+| `PUBLIC_BOOKING_API_URL` | Base URL of the booking service. Used for the "Book a demo" form action (`/demo-requests`). | `https://book.kilnbook.co` |
 
 It is declared in the `env.schema` block of `astro.config.mjs`, read at build time and baked into
 the HTML. If it is missing or not a URL, `pnpm build` fails with
