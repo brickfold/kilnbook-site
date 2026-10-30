@@ -1,10 +1,17 @@
 ---
 import Base from "../../layouts/Base.astro";
+import { featureJsonLd } from "../../lib/featureJsonLd";
+
+const title = "Kiln firing queues";
+const description =
+	"Track bisque and glaze loads, charge firing fees by cubic inch, and text members when their pieces are ready for pickup.";
 ---
 
 <Base
-	title="Kiln firing queues"
-	description="Track bisque and glaze loads, charge firing fees by cubic inch, and text members when their pieces are ready for pickup."
+	{title}
+	{description}
+	image="/images/og/firings.png"
+	jsonLd={featureJsonLd(title, description, "/features/firings")}
 >
 	<section class="band-dark page-hero">
 		<div class="wrap split">

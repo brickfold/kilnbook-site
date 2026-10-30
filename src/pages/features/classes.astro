@@ -1,10 +1,17 @@
 ---
 import Base from "../../layouts/Base.astro";
+import { featureJsonLd } from "../../lib/featureJsonLd";
+
+const title = "Classes and class packs";
+const description =
+	"Sell multi-week pottery courses, drop-in sessions and class packs with waitlists that fill cancelled seats automatically.";
 ---
 
 <Base
-	title="Classes and class packs"
-	description="Sell multi-week pottery courses, drop-in sessions and class packs with waitlists that fill cancelled seats automatically."
+	{title}
+	{description}
+	image="/images/og/classes.png"
+	jsonLd={featureJsonLd(title, description, "/features/classes")}
 >
 	<section class="band-dark page-hero">
 		<div class="wrap split">
@@ -38,7 +45,7 @@ import Base from "../../layouts/Base.astro";
 		<p>
 			When a class is full, students join the waitlist. If someone cancels, the next person on the
 			list gets the seat offered by text and has two hours to accept before it moves on. Students
-			recieve a reminder the day before every class, with what to bring and where to park.
+			receive a reminder the day before every class, with what to bring and where to park.
 		</p>
 
 		<h2>Instructors see their roster</h2>

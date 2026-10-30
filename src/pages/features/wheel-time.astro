@@ -1,9 +1,19 @@
 ---
 import Base from "../../layouts/Base.astro";
+import { featureJsonLd } from "../../lib/featureJsonLd";
+
+const title = "Wheel and table booking";
+const description =
+	"Let members book wheels, hand-building tables and the slab roller in one-hour blocks, with booking limits and rules set per membership tier.";
 ---
 
-<Base title="Wheel and table booking">
-	<section class="band-dark page-hero">
+<Base
+	{title}
+	{description}
+	image="/images/og/wheel-time.png"
+	jsonLd={featureJsonLd(title, description, "/features/wheel-time")}
+>
+	<section class="page-hero">
 		<div class="wrap split">
 			<div>
 				<p class="eyebrow">Wheel time</p>
