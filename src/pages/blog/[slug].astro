@@ -14,7 +14,7 @@ const fmt = new Intl.DateTimeFormat("en-US", { dateStyle: "long" });
 
 <Base title={post.data.title} description={post.data.description}>
 	<article>
-		<header class="band-dark page-hero">
+		<header class="band-dark band-solid page-hero">
 			<div class="wrap">
 				<p class="eyebrow">
 					<a href="/blog">Journal</a> · {fmt.format(post.data.pubDate)} · {post.data.author}

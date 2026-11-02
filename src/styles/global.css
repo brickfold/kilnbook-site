@@ -57,6 +57,7 @@ img { max-width: 100%; height: auto; }
 		var(--black);
 	color: #fff;
 }
+.band-dark.band-solid { background: var(--black); }
 .band-dark .muted { color: #9aa1af; }
 .band-dark .lede { color: #c6cbd6; }
 .band-dark .eyebrow { color: var(--orange); }
@@ -207,7 +208,7 @@ img { max-width: 100%; height: auto; }
 /* ---- Journal ---- */
 .post-list { list-style: none; padding: 0; }
 .post-list li { padding: 26px 0; border-bottom: 1px solid var(--line); }
-.post-list h2, .post-list h3 { margin: 0 0 6px; font-size: 1.4rem; }
+.post-list h2, .post-list h3 { margin: 0 0 6px; font-size: 1.4rem; letter-spacing: -0.01em; word-spacing: 0.08em; }
 .post-list a { text-decoration: none; color: var(--ink); }
 .post-list a:hover { color: var(--orange-deep); }
 
