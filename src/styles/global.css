@@ -174,7 +174,7 @@ img { max-width: 100%; height: auto; }
 .plan ul { list-style: none; padding: 0; margin: 20px 0 0; }
 .plan li { position: relative; padding: 9px 0 9px 28px; border-bottom: 1px solid var(--line); }
 .plan li:last-child { border-bottom: 0; }
-.plan li::before { content: "✓"; position: absolute; left: 0; color: var(--orange-deep); font-weight: 900; }
+.plan li::before { content: "✓"; position: absolute; left: 0; color: var(--orange); font-weight: 900; }
 .plan.featured {
 	background: var(--black);
 	color: #fff;
