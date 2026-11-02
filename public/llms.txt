@@ -10,6 +10,12 @@
 - [Wheel time](https://kilnbook.co/features/wheel-time): Reserving wheels, hand-building tables and other equipment in one-hour blocks, with booking rules per membership tier.
 - [Pricing](https://kilnbook.co/pricing): Starter, Studio and Collective monthly plans, all with a 30-day free trial.
 
+## Studios
+
+- [Community studios](https://kilnbook.co/solutions/community-studios): Running shared wheels, firing queues and memberships at a community studio, so members can book, log work and see when it is out of the kiln.
+- [Multi-location studios](https://kilnbook.co/solutions/multi-location-studios): Kilnbook for studios with more than one location: one member account across locations, unlimited kilns, staff roles and shift notes.
+- [Schools and nonprofits](https://kilnbook.co/solutions/schools-and-nonprofits): Class registration, waitlists, firing queues and wheel time for school studios and nonprofit ceramics programs, with 30% off any plan.
+
 ## Company
 
 - [About](https://kilnbook.co/about): How Kilnbook was started in 2022 by a studio owner and a software engineer in Portland, Oregon, what the team believes, and who works here.
