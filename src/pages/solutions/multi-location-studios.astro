@@ -1,11 +1,35 @@
 ---
 import Base from "../../layouts/Base.astro";
+
+const title = "Software for multi-location pottery studios";
+const description =
+	"Kilnbook for pottery studios with more than one location: multiple locations with one member account, unlimited kilns, staff roles and shift notes.";
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	name: "Kilnbook for multi-location studios",
+	description,
+	url: new URL(Astro.url.pathname, Astro.site).href,
+	applicationCategory: "BusinessApplication",
+	image: new URL("/images/og-multi-location-studios.png", Astro.site).href,
+	offers: {
+		"@type": "Offer",
+		name: "Collective plan",
+		price: "149",
+		priceCurrency: "USD",
+		url: new URL("/pricing", Astro.site).href,
+	},
+	publisher: {
+		"@type": "Organization",
+		name: "Kilnbook",
+		url: Astro.site?.href,
+		logo: new URL("/images/logo.svg", Astro.site).href,
+	},
+};
 ---
 
-<Base
-	title="Software for multi-location pottery studios"
-	description="Kilnbook for pottery studios with more than one location: multiple locations with one member account, unlimited kilns, staff roles and shift notes."
->
+<Base {title} {description} image="/images/og-multi-location-studios.png" {jsonLd}>
 	<section class="band-dark page-hero">
 		<div class="wrap split">
 			<div>
