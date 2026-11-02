@@ -7,9 +7,10 @@ interface Props {
 	title: string;
 	description?: string;
 	image?: string;
+	jsonLd?: Record<string, unknown>;
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, jsonLd } = Astro.props;
 const ogImage = image && new URL(image, Astro.site);
 const canonical = new URL(Astro.url.pathname.replace(/\/$/, "") || "/", Astro.site);
 const fullTitle = title === "Kilnbook" ? title : `${title} · Kilnbook`;
@@ -44,6 +45,7 @@ const fullTitle = title === "Kilnbook" ? title : `${title} · Kilnbook`;
 				</>
 			)
 		}
+		{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 		<meta name="theme-color" content="#0f1117" />
 		<script is:inline>(function(w,d){var h=null;try{var l=w.localStorage,p=JSON.parse(l.getItem("lv:vp:"+"lv_pub_y0al6h7uxryqzgsrh74f493h")||"[]"),q=(location.pathname||"/").replace(/\/{2,}/g,"/").replace(/(.)\/+$/,"$1");if(!l.getItem("lv:seen:"+"lv_pub_y0al6h7uxryqzgsrh74f493h")||p.indexOf(q)>=0){h=d.createElement("style");h.textContent="html{opacity:0!important}";d.head.appendChild(h)}l.setItem("lv:seen:"+"lv_pub_y0al6h7uxryqzgsrh74f493h","1")}catch(e){}w.__lvReveal=function(){if(h&&h.parentNode)h.parentNode.removeChild(h);h=null};setTimeout(function(){if(h)w.__lvLate=1;w.__lvReveal()},1000);var s=d.createElement("script");s.src="https://lettervisit.com/v.js?k=lv_pub_y0al6h7uxryqzgsrh74f493h";s.async=true;s.setAttribute("data-key","lv_pub_y0al6h7uxryqzgsrh74f493h");s.onerror=w.__lvReveal;d.head.appendChild(s)})(window,document)</script>
 	</head>
