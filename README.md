@@ -75,6 +75,9 @@ author: "Your Name"
 
 The URL is `/blog/<slug>`.
 
+Author bios live in `src/content/authors/<slug>.md` (`name`, `role`, `bio` in the frontmatter).
+A post shows the bio whose `name` matches its `author`; add a file there for each new author.
+
 ## Deploying
 
 Netlify builds every push. `main` is production (https://kilnbook.co); every pull request gets a
