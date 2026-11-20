@@ -21,3 +21,7 @@
 - [Sharing one glaze kiln between cone 6 and cone 10 potters](https://kilnbook.co/blog/glaze-firing-schedules): How three studios schedule a single gas kiln for two temperature ranges.
 - [Three membership tiers that work for most studios](https://kilnbook.co/blog/membership-tiers): A simple Basic, Regular and Unlimited membership structure and how to set wheel-time limits.
 - [How to price a class pack without losing money on clay](https://kilnbook.co/blog/pricing-a-class-pack): A worked example for pricing 5- and 10-class packs, including clay, firing and instructor time.
+
+## Glossary
+
+- [Kiln glossary](https://kilnbook.co/glossary): Plain definitions of bisque, glaze firing and cone terms, from greenware to cone 10.

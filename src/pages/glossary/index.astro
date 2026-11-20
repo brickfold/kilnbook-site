@@ -1,0 +1,58 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const groups = ["Bisque", "Glaze firing", "Cones"] as const;
+const terms = (await getCollection("glossary")).sort((a, b) =>
+	a.data.term.localeCompare(b.data.term),
+);
+---
+
+<Base
+	title="Kiln glossary"
+	description="Plain definitions of the bisque, glaze firing and cone terms that come up at a pottery studio's front desk, from greenware to cone 10."
+>
+	<section class="band-dark page-hero">
+		<div class="wrap">
+			<p class="eyebrow">Glossary</p>
+			<h1>Kiln words, in plain English</h1>
+			<p class="lede narrow">
+				Bisque, glaze firing and cone terms your members hear at the shelf, written down once so the
+				front desk does not have to explain them every week.
+			</p>
+		</div>
+	</section>
+
+	<section class="wrap section narrow">
+		{
+			groups.map((group) => (
+				<>
+					<h2>{group}</h2>
+					<ul class="post-list">
+						{terms
+							.filter((t) => t.data.group === group)
+							.map((t) => (
+								<li>
+									<h3>
+										<a href={`/glossary/${t.id}`}>{t.data.term}</a>
+									</h3>
+									<p>{t.data.description}</p>
+								</li>
+							))}
+					</ul>
+				</>
+			))
+		}
+	</section>
+
+	<section class="cta-band">
+		<div class="wrap">
+			<h2>Put every load in one queue.</h2>
+			<p>
+				Kilnbook keeps bisque, cone 6 and cone 10 queues for each kiln and texts members when their
+				work is out.
+			</p>
+			<a href="/features/firings" class="btn btn-dark">See kiln firings</a>
+		</div>
+	</section>
+</Base>

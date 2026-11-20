@@ -1,0 +1,32 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+	const terms = await getCollection("glossary");
+	return terms.map((term) => ({ params: { slug: term.id }, props: { term } }));
+}
+
+const { term } = Astro.props;
+const { Content } = await render(term);
+---
+
+<Base title={`${term.data.term}: kiln glossary`} description={term.data.description}>
+	<article>
+		<header class="band-dark page-hero">
+			<div class="wrap">
+				<p class="eyebrow">
+					<a href="/glossary">Glossary</a> · {term.data.group}
+				</p>
+				<h1>{term.data.term}</h1>
+				<p class="lede narrow">{term.data.description}</p>
+			</div>
+		</header>
+		<div class="wrap section">
+			<div class="prose">
+				<Content />
+				<p><a href="/glossary">Back to the glossary</a></p>
+			</div>
+		</div>
+	</article>
+</Base>
