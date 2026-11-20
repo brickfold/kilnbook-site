@@ -14,6 +14,7 @@
 
 - [About](https://kilnbook.co/about): How Kilnbook was started in 2022 by a studio owner and a software engineer in Portland, Oregon, what the team believes, and who works here.
 - [Contact](https://kilnbook.co/contact): Book a 20-minute demo, reach customer support, or get in touch about press and partnerships.
+- [Changelog](https://kilnbook.co/changelog): What is new in Kilnbook, newest first.
 
 ## Journal
 

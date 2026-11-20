@@ -1,0 +1,60 @@
+---
+import Base from "../layouts/Base.astro";
+
+interface Entry {
+	date: string;
+	area: string;
+	title: string;
+	summary: string;
+}
+
+const entries: Entry[] = [];
+---
+
+<Base
+	title="Changelog"
+	description="What is new in Kilnbook: every change we ship for kiln firings, classes, class packs and wheel time, newest first."
+>
+	<section class="band-dark page-hero">
+		<div class="wrap">
+			<p class="eyebrow">Changelog</p>
+			<h1>What is new in Kilnbook</h1>
+			<p class="lede narrow">
+				Updates to kiln firings, classes and wheel time, newest first.
+			</p>
+		</div>
+	</section>
+
+	<section class="wrap section narrow">
+		{
+			entries.length > 0 ? (
+				<ul class="post-list">
+					{entries.map((entry) => (
+						<li>
+							<p class="eyebrow">{entry.area}</p>
+							<h2>{entry.title}</h2>
+							<p class="muted small">{entry.date}</p>
+							<p>{entry.summary}</p>
+						</li>
+					))}
+				</ul>
+			) : (
+				<p>
+					Nothing is posted here yet. In the meantime, the <a href="/blog">journal</a> has notes on
+					running a studio and what we are building at Kilnbook.
+				</p>
+			)
+		}
+		<p class="muted">
+			Have an idea for what we should build next? <a href="/contact">Tell us</a>.
+		</p>
+	</section>
+
+	<section class="cta-band">
+		<div class="wrap">
+			<h2>See Kilnbook on your own kilns.</h2>
+			<p>30 days free to start. No card needed, and nothing is deleted if you walk away.</p>
+			<a href="/contact" class="btn btn-dark">Book a demo</a>
+		</div>
+	</section>
+</Base>
