@@ -1,0 +1,60 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, getEntries, render } from "astro:content";
+
+export async function getStaticPaths() {
+	const terms = await getCollection("glossary");
+	return terms.map((term) => ({ params: { slug: term.id }, props: { term } }));
+}
+
+const { term } = Astro.props;
+const { Content } = await render(term);
+const related = await getEntries(term.data.related);
+---
+
+<Base title={`${term.data.term}: what it means`} description={term.data.description}>
+	<article>
+		<header class="band-dark page-hero">
+			<div class="wrap">
+				<p class="eyebrow">
+					<a href="/glossary">Glossary</a> · {term.data.group}
+				</p>
+				<h1>{term.data.term}</h1>
+				<p class="lede narrow">{term.data.description}</p>
+			</div>
+		</header>
+		<div class="wrap section">
+			<div class="prose">
+				<Content />
+			</div>
+		</div>
+	</article>
+
+	{
+		related.length > 0 && (
+			<section class="section section-alt">
+				<div class="wrap">
+					<p class="eyebrow">Related terms</p>
+					<h2>Keep reading</h2>
+					<div class="cards">
+						{related.map((r) => (
+							<div class="card">
+								<h3>{r.data.term}</h3>
+								<p>{r.data.description}</p>
+								<a href={`/glossary/${r.id}`}>Read more</a>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		)
+	}
+
+	<section class="cta-band">
+		<div class="wrap">
+			<h2>Stop answering "is my bowl out yet?"</h2>
+			<p>30 days free to start. No card needed, and nothing is deleted if you walk away.</p>
+			<a href="/contact" class="btn btn-dark">Book a demo</a>
+		</div>
+	</section>
+</Base>
