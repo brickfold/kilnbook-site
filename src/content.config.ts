@@ -11,4 +11,13 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const glossary = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/glossary" }),
+	schema: z.object({
+		term: z.string(),
+		description: z.string(),
+		group: z.enum(["Bisque", "Glaze firing", "Cones"]),
+	}),
+});
+
+export const collections = { blog, glossary };
