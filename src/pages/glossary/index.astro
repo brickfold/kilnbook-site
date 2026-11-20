@@ -1,0 +1,52 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const groups = ["Bisque firing", "Glaze firing", "Cones", "Running the kiln"] as const;
+const terms = (await getCollection("glossary")).sort((a, b) => a.data.term.localeCompare(b.data.term));
+---
+
+<Base
+	title="Kiln firing glossary"
+	description="Plain-English definitions of bisque firing, glaze firing, cone numbers, cone ranges and the other kiln terms members hear in a pottery studio."
+>
+	<section class="band-dark page-hero">
+		<div class="wrap">
+			<p class="eyebrow">Glossary</p>
+			<h1>Kiln firing terms, in plain words</h1>
+			<p class="lede narrow">
+				Bisque, glaze, cone 06 or cone 6: the words members hear at the kiln room door, explained for
+				the people who load the kiln and run the front desk.
+			</p>
+		</div>
+	</section>
+
+	{
+		groups.map((group, i) => (
+			<section class:list={["section", { "section-alt": i % 2 === 1 }]} id={group.toLowerCase().replace(/\s+/g, "-")}>
+				<div class="wrap">
+					<h2 class="glossary-group">{group}</h2>
+					<div class="cards">
+						{terms
+							.filter((t) => t.data.group === group)
+							.map((t) => (
+								<div class="card">
+									<h3>{t.data.term}</h3>
+									<p>{t.data.description}</p>
+									<a href={`/glossary/${t.id}`}>Read more</a>
+								</div>
+							))}
+					</div>
+				</div>
+			</section>
+		))
+	}
+
+	<section class="cta-band">
+		<div class="wrap">
+			<h2>Put your firing queue where members can see it.</h2>
+			<p>30 days free to start. No card needed, and nothing is deleted if you walk away.</p>
+			<a href="/contact" class="btn btn-dark">Book a demo</a>
+		</div>
+	</section>
+</Base>

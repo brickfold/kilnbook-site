@@ -13,11 +13,17 @@ const staticPaths = [
 	"/solutions/multi-location-studios",
 	"/solutions/schools-and-nonprofits",
 	"/blog",
+	"/glossary",
 ];
 
 export const GET: APIRoute = async ({ site }) => {
 	const posts = await getCollection("blog");
-	const paths = [...staticPaths, ...posts.map((p) => `/blog/${p.id}`)];
+	const terms = await getCollection("glossary");
+	const paths = [
+		...staticPaths,
+		...posts.map((p) => `/blog/${p.id}`),
+		...terms.map((t) => `/glossary/${t.id}`),
+	];
 	const urls = paths
 		.map((path) => `  <url><loc>${new URL(path, site).href}</loc></url>`)
 		.join("\n");
