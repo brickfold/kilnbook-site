@@ -9,6 +9,7 @@
 - [Classes and class packs](https://kilnbook.co/features/classes): Selling multi-week courses, drop-in sessions and class packs, with waitlists that fill cancelled seats automatically.
 - [Wheel time](https://kilnbook.co/features/wheel-time): Reserving wheels, hand-building tables and other equipment in one-hour blocks, with booking rules per membership tier.
 - [Pricing](https://kilnbook.co/pricing): Starter, Studio and Collective monthly plans, all with a 30-day free trial.
+- [Changelog](https://kilnbook.co/changelog): Product updates to Kilnbook, newest first.
 
 ## Company
 

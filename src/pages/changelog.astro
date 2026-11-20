@@ -1,0 +1,50 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+const entries = await Promise.all(
+	(await getCollection("changelog"))
+		.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+		.map(async (entry) => ({ entry, Content: (await render(entry)).Content })),
+);
+const fmt = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
+---
+
+<Base
+	title="Changelog"
+	description="What is new in Kilnbook: product updates for kiln firings, classes and packs, wheel time and memberships, newest first."
+>
+	<section class="band-dark page-hero">
+		<div class="wrap">
+			<p class="eyebrow">Changelog</p>
+			<h1>What's new in Kilnbook</h1>
+			<p class="lede narrow">
+				Updates to firings, classes, wheel time and memberships, newest first.
+			</p>
+		</div>
+	</section>
+
+	<section class="wrap section narrow">
+		<ol class="post-list changelog">
+			{
+				entries.map(({ entry, Content }) => (
+					<li id={entry.id}>
+						<p class="eyebrow">
+							<time datetime={entry.data.date.toISOString().slice(0, 10)}>
+								{fmt.format(entry.data.date)}
+							</time>
+							{entry.data.area && <> · {entry.data.area}</>}
+						</p>
+						<h2>{entry.data.title}</h2>
+						<Content />
+						{entry.data.link && (
+							<p>
+								<a href={entry.data.link}>Read more</a>
+							</p>
+						)}
+					</li>
+				))
+			}
+		</ol>
+	</section>
+</Base>

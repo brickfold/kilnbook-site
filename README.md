@@ -49,6 +49,7 @@ pnpm preview    # serve dist/ locally
 src/
   pages/            one file per route; features/ and blog/ are nested routes
   content/blog/     journal posts in Markdown (frontmatter schema in src/content.config.ts)
+  content/changelog/  product updates for /changelog, one Markdown file per entry
   layouts/Base.astro  <head>, header and footer for every page
   components/       Header, Footer, DemoForm
   styles/global.css   all styles; colour variables at the top
@@ -74,6 +75,21 @@ author: "Your Name"
 ```
 
 The URL is `/blog/<slug>`.
+
+### Adding a changelog entry
+
+Create `src/content/changelog/<slug>.md`. Entries show on `/changelog`, newest first:
+
+```md
+---
+title: "What changed, in a few words"
+date: 2026-10-01
+area: "Kiln firings" # optional: Kiln firings, Classes & packs, Wheel time or Memberships
+link: "/blog/some-post" # optional: a page with more detail
+---
+
+One or two sentences on what studios can do now.
+```
 
 ## Deploying
 

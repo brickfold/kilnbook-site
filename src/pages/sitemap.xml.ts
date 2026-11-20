@@ -13,6 +13,7 @@ const staticPaths = [
 	"/solutions/multi-location-studios",
 	"/solutions/schools-and-nonprofits",
 	"/blog",
+	"/changelog",
 ];
 
 export const GET: APIRoute = async ({ site }) => {
