@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const entries = (await getCollection("changelog")).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const fmt = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
+---
+
+<Base
+	title="Changelog"
+	description="What is new in Kilnbook: updates to kiln firings, classes and packs, and wheel time for pottery studios, newest first."
+>
+	<section class="band-dark page-hero">
+		<div class="wrap">
+			<p class="eyebrow">Changelog</p>
+			<h1>What's new in Kilnbook</h1>
+			<p class="lede narrow">
+				The changes we ship to firings, classes and wheel time, newest first. Most of them start
+				with a question from a studio.
+			</p>
+		</div>
+	</section>
+
+	<section class="wrap section narrow">
+		{
+			entries.length === 0 ? (
+				<p class="muted">No updates posted yet. Check back soon.</p>
+			) : (
+				<ul class="post-list">
+					{entries.map((entry) => (
+						<li id={entry.id}>
+							<p class="muted small">
+								<time datetime={entry.data.date.toISOString().slice(0, 10)}>
+									{fmt.format(entry.data.date)}
+								</time>
+							</p>
+							<h2>{entry.data.title}</h2>
+							<p>{entry.data.description}</p>
+							{entry.data.link && <a href={entry.data.link}>Read more</a>}
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</section>
+</Base>
