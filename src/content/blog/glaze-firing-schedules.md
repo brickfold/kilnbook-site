@@ -5,7 +5,7 @@ pubDate: 2026-08-04
 author: "Theo Achebe"
 ---
 
-# Why one kiln for two cones gets messy
+## Why one kiln for two cones gets messy
 
 If your members work in both mid-range and high-fire clay bodies, you already know the argument: a half-full cone 10 load sits for two weeks because nobody wants to fire it empty, and the cone 6 people keep jumping the queue.
 
