@@ -107,6 +107,20 @@ img { max-width: 100%; height: auto; }
 .hero p.lede, .lede { font-size: 1.25rem; }
 .hero img { filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.45)); }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.hero-eyebrow {
+	display: inline-block;
+	border: 2px solid var(--orange);
+	border-radius: 999px;
+	padding: 7px 14px;
+	margin-bottom: 24px;
+}
+.hero h1 { margin-bottom: 0.32em; }
+.hero h1 .hl { box-shadow: inset 0 -0.1em 0 var(--orange-deep); }
+.band-dark .hero .lede { color: #e3e6ed; line-height: 1.55; margin: 0 0 22px; max-width: 34em; }
+.hero .lede strong { display: block; color: #fff; font-weight: 800; margin-bottom: 8px; }
+.hero-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.hero-points li { position: relative; padding-left: 30px; font-size: 1rem; font-weight: 600; color: #fff; }
+.hero-points li::before { content: "✓"; position: absolute; left: 0; color: var(--orange); font-weight: 900; }
 
 .stats {
 	display: flex;
