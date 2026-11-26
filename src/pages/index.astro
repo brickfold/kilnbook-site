@@ -14,20 +14,26 @@ const bookingUrl = PUBLIC_BOOKING_API_URL;
 	image="/images/og-home.png"
 	description="Kilnbook is booking and class-management software for pottery studios: kiln firing queues, wheel time reservations, class packs and memberships in one place."
 >
-	<section class="band-dark">
+	<section class="home-hero">
 		<div class="wrap hero">
 			<div>
-				<p class="eyebrow">Booking software for pottery studios</p>
-				<h1>The front desk for your <span class="hl">pottery studio.</span></h1>
+				<p class="eyebrow">The front desk for pottery studios</p>
+				<h1>Stop running your pottery studio on <span class="mark">sticky notes.</span></h1>
 				<p class="lede">
-					Kilnbook runs the parts of a studio that live on whiteboards and sticky notes: who is firing
-					what, which wheels are free on Thursday, and how many classes are left on a student's pack.
+					Kilnbook is a cloud-based front desk that runs your kiln firings, classes and wheel time in
+					one place, so you always know who is firing what and which seats are free.
 				</p>
+				<ul class="hero-value">
+					<li>Kiln firing queue and fees by cubic inch</li>
+					<li>Classes, drop-ins and class packs</li>
+					<li>Wheels and hand-building tables by the hour</li>
+					<li>Memberships with limits per tier</li>
+				</ul>
 				<div class="hero-actions">
-					<a href="/contact" class="btn">Book a demo</a>
-					<a href="/pricing" class="btn btn-ghost">See pricing</a>
+					<a href="/contact" class="btn btn-large">Start your 30-day free trial</a>
+					<a href="/contact" class="btn btn-ghost btn-large">Book a demo</a>
 				</div>
-				<p class="muted small">30-day free trial. No card needed to start.</p>
+				<p class="hero-note">No credit card required. Nothing is deleted if you walk away.</p>
 			</div>
 			<img
 				src="/images/hero-kiln.svg"
@@ -36,7 +42,7 @@ const bookingUrl = PUBLIC_BOOKING_API_URL;
 				height="420"
 			/>
 		</div>
-		<div class="wrap stats">
+		<div class="wrap stats stats-light">
 			<div class="stat"><strong>340+</strong><span>Studios on Kilnbook</span></div>
 			<div class="stat"><strong>3</strong><span>Countries</span></div>
 			<div class="stat"><strong>30 days</strong><span>Free trial, no card</span></div>
@@ -72,6 +78,10 @@ const bookingUrl = PUBLIC_BOOKING_API_URL;
 					</p>
 					<a href="/features/wheel-time">Wheel and table booking</a>
 				</div>
+			</div>
+			<div class="section-cta">
+				<a href="/contact" class="btn">Start your 30-day free trial</a>
+				<span class="muted">No credit card required.</span>
 			</div>
 		</div>
 	</section>
@@ -116,9 +126,12 @@ const bookingUrl = PUBLIC_BOOKING_API_URL;
 
 	<section class="cta-band">
 		<div class="wrap">
-			<h2>Stop running your studio on sticky notes.</h2>
-			<p>30 days free on the Studio plan. No card to start, and nothing is deleted if you walk away.</p>
-			<a href="/contact" class="btn btn-dark">Book a demo</a>
+			<h2>Try Kilnbook free for 30 days.</h2>
+			<p>Start on the Studio plan with no credit card. Nothing is deleted if you walk away.</p>
+			<div class="cta-actions">
+				<a href="/contact" class="btn btn-dark btn-large">Start your free trial</a>
+				<a href="/pricing" class="btn btn-ghost btn-large">See pricing</a>
+			</div>
 		</div>
 	</section>
 </Base>
